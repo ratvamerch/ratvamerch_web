@@ -28,14 +28,14 @@ const Partners = ({partners}) => {
                 {partners.map(partner => {
                     return (
                         <div key={partner.id} className="flex flex-col justify-center items-center">
-                            <div className="box-border border-2">
+                            <div className="box-border border-2 rounded-xl shadow-md overflow-hidden">
                                 <img 
                                     src={partner.partnerAva.url}
                                     alt={partner.partnerName}
                                     title={partner.partnerName}
                                 />
                             </div>
-                            <p className="font-bold text-center">{partner.partnerName}</p>
+                            <p className="text-xl mt-1 font-bold text-center">{partner.partnerName}</p>
                         </div>
                     )
                 })}

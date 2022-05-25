@@ -8,6 +8,10 @@
     background: transparent;
 }
 
+.ripple {
+  background-color: #c4c4c4;
+}
+
 .rippleButton > .ripple {
     animation: 900ms ease 1 forwards ripple-effect;
 }

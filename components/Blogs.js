@@ -4,28 +4,6 @@ import {request, gql} from 'graphql-request';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
-// export const getPostDetail = async (slug) => {
-//     const query = gql`
-//         query GetPostDetail($slug : String!) {
-//             blogPosts(where: {slug: $slug}) {
-//                 id
-//                 tittle
-//                 slug
-//                 thumnail {
-//                   url
-//                 }
-//                 dateCreated
-//                 describtion
-//                 detail
-//             }
-//         }
-//     `;
-
-//     const result = await request(graphqlAPI, query);
-
-//     return result.blogPosts;
-// };
-
 export const getBlogPosts = async () => {
     const query = gql`
         {

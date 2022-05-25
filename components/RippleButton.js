@@ -20,7 +20,7 @@ const RippleButton = ({ children, link, type, onClick }) => {
     return (
         <button
             className= {` 
-                relative rounded-md m-4 px-6 py-3 font-bold overflow-hidden cursor-pointer
+                relative w-40 rounded-md m-4 px-6 py-3 font-bold overflow-hidden cursor-pointer
                 ${type == 'bordered' ? styles.borderButton : styles.rippleButton}
             `}
 
@@ -44,7 +44,7 @@ const RippleButton = ({ children, link, type, onClick }) => {
             ) : (
                 ""
             )}
-            <span className={`relative z-10 ${styles.content}`}>
+            <span className={`relative w-full h-full z-10 ${styles.content}`}>
                 <Link href={`/${link}`} passHref>
                     <a>{children}</a>
                 </Link>

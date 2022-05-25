@@ -77,7 +77,7 @@ const FeedbackForm = () => {
             alert(JSON.stringify(values, null, 2));
         }}
       >
-        <Form className="w-4/5 md:w-2/3 lg:w-1/2 flex flex-col justify-center items-center mx-auto mb-10 p-4 box-border border-2 border-cyan-500 rounded-md">
+        <Form className="w-4/5 md:w-2/3 lg:w-1/2 shadow-md flex flex-col justify-center items-center mx-auto mb-10 p-4 box-border border-2 border-cyan-500 rounded-md">
           <MyTextInput
             label="Full Name"
             name="fullName"
