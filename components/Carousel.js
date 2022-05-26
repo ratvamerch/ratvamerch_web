@@ -8,7 +8,7 @@ const Carousel = () => {
   return (
     <Swiper
         style={{height: "40vh"}}
-        className="w-4/5 md:w-2/3 lg:w-1/2 text-center border-2 rounded-lg border-neutral-200 my-10"
+        className="w-4/5 md:w-2/3 lg:w-1/2 mx-auto text-center border-2 rounded-lg border-neutral-200 shadow-md my-20"
         modules={[Navigation, Pagination, Autoplay, Keyboard]}
         spaceBetween={50}
         slidesPerView={1}

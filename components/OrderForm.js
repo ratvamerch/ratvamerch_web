@@ -10,13 +10,13 @@ const MyTextInput = ({ label, ...props }) => {
       <>
         <label 
             htmlFor={props.id || props.name} 
-            className="text-cyan-500 uppercase text-sm mt-4 font-bold"
+            className="w-full ml-6 text-cyan-500 uppercase text-sm mt-4 font-bold"
         >
             {label}
         </label>
         <input className="text-input w-full border-2 border-neutral-200 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" {...field} {...props} />
         {meta.touched && meta.error ? (
-          <div className="error">{meta.error}</div>
+          <div className="error text-red-500">{meta.error}</div>
         ) : null}
       </>
     );
@@ -26,12 +26,12 @@ const MyCheckbox = ({ children, ...props }) => {
     const [field, meta] = useField({ ...props, type: "checkbox" });
     return (
       <>
-        <label className="checkbox">
+        <label className="checkbox mt-4">
           <input {...field} {...props} type="checkbox" />
-          {children}
+          <span className="ml-1">{children}</span>
         </label>
         {meta.touched && meta.error ? (
-          <div className="error">{meta.error}</div>
+          <div className="error text-red-500">{meta.error}</div>
         ) : null}
       </>
     );
@@ -45,13 +45,13 @@ const MySelect = ({ label, ...props }) => {
       <>
         <label 
             htmlFor={props.id || props.name} 
-            className="text-cyan-500 uppercase text-sm mt-4 font-bold"
+            className="w-full ml-6 text-left text-cyan-500 uppercase text-sm mt-4 font-bold"
         >
             {label}
         </label>
         <select className="w-full border-2 border-neutral-200 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline"{...field} {...props} />
         {meta.touched && meta.error ? (
-            <div className="error">{meta.error}</div>
+            <div className="error text-red-500">{meta.error}</div>
         ) : null}
       </>
     );
@@ -60,7 +60,7 @@ const MySelect = ({ label, ...props }) => {
 const OrderForm = () => {
     return (
         <section id="contactForm">
-            <h2 className="font-bold text-2xl text-cyan-500 text-center mt-20 mb-4">ĐỂ LẠI LỜI NHẮN VỚI CHÚNG MÌNH</h2>
+            <h2 className="font-bold text-2xl text-cyan-500 text-center mt-20 mb-6">ỦNG HỘ CHÚNG MÌNH NHÉ</h2>
             <Formik
             initialValues={{
                 fullName: "",
@@ -107,7 +107,7 @@ const OrderForm = () => {
                 console.log(JSON.stringify(values, null, 2));
             }}
             >
-            <Form className="w-4/5 md:w-2/3 lg:w-1/2 flex flex-col justify-center items-center mx-auto mb-10 p-4 box-border border-2 border-cyan-500 rounded-md">
+            <Form className="w-4/5 md:w-2/3 lg:w-1/2 flex flex-col justify-center items-center mx-auto mb-10 p-4 box-border border-2 border-cyan-500 shadow-md rounded-md">
                 <MyTextInput
                 label="Họ tên của bạn"
                 name="fullName"

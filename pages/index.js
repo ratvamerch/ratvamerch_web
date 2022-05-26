@@ -1,6 +1,6 @@
 import Head from "next/head";
 import Image from 'next/image';
-import landingPic from '../public/landingPic.png';
+import mascot from '../public/mascotpj.png';
 import {getFeatures} from "../components/Features";
 import Features from '../components/Features';
 import {getPartners} from "../components/Partners";
@@ -11,6 +11,7 @@ import PreOrder from '../components/PreOrder';
 import Carousel from '../components/Carousel';
 import RippleButton from "../components/RippleButton";
 import FeedbackForm from "../components/FeedbackForm";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 export default function Home({features, partners, deliverySteps}) {
   const Reasons = [
@@ -35,21 +36,21 @@ export default function Home({features, partners, deliverySteps}) {
           <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         </Head>
         {/* Welcome */}
-        <section style={{height: '80vh'}} className="flex justify-center items-center my-8 box-border">
-          <div className="w-3/4 h-full min-h-max mx-auto grid lg:grid-cols-3 lg:grid-flow-col gap-5 px-6 box-border">
-            <div className="flex justify-center items-center col-span-1">
-              <Image src={landingPic} alt="landing" title="landing" width={500} height={500}/>
-            </div>
-            <div className="flex flex-col justify-center col-span-2">
-              <h1 className="font-bold text-6xl">
+        <section style={{height: '80vh'}} className="w-full flex justify-center items-center mt-6 mb-10 box-border">
+          <div className="w-full md:w-3/4 h-full min-h-max mx-auto grid lg:grid-cols-3 lg:grid-flow-col md:gap-5 px-6 box-border">
+            <div className="flex flex-col md:justify-center mt-40 md:mt-0 lg:col-span-2 z-10 backdrop-blur-sm">
+              <h1 className="font-bold text-4xl md:text-6xl">
                 CHÚNG MÌNH CÓ <br/>
                 <span className="text-cyan-500 ml-2">STANDEE</span>
               </h1>
-              <p className="text-neutral-500 pr-6">Customize nhân vật yêu thích của bạn với rất vã merch. Chúng mình có đa dạng các loại sản phẩm độc đáo, chất lượng, hợp tác cùng những họa sĩ hàng đầu </p>
+              <p className="pr-4 text-lg mt-2">Customize nhân vật yêu thích của bạn với rất vã merch. Chúng mình có đa dạng các loại sản phẩm độc đáo, chất lượng, hợp tác cùng những họa sĩ hàng đầu </p>
               <div className="flex justify-center items-center mt-4">
                 <RippleButton type="bordered" link="news">Hóng tin mới</RippleButton>
                 <RippleButton link="preorder">Xem sản phẩm</RippleButton>
               </div>
+            </div>
+            <div className="flex justify-center items-center md:col-span-1 absolute md:static top-40">
+              <Image src={mascot} alt="landing" title="landing" width={400} height={500}/>
             </div>
           </div>
         </section>
@@ -61,10 +62,13 @@ export default function Home({features, partners, deliverySteps}) {
         <Features features = {features} />
         
         {/*Why choosing us*/}
-        <section style={{height: '60vh'}} className="flex justify-center items-center my-8 box-border">
-          <div className="w-3/4 h-full min-h-max mx-auto grid lg:grid-cols-3 lg:grid-flow-col gap-5 px-6 box-border">
-            <div className="flex flex-col justify-center col-span-2">
-              <h2 className="font-bold text-6xl mb-4">
+        <section style={{height: '60vh'}} className="flex justify-center items-center mb-40 md:my-20 box-border">
+          <div className="w-full md:w-3/4 h-full min-h-max mx-auto grid lg:grid-cols-3 lg:grid-flow-col md:gap-4 px-10 box-border">
+            <div className="flex justify-center items-center col-span-1">
+              <Image src={mascot} alt="landing" title="landing" width={400} height={500}/>
+            </div>
+            <div className="w-full flex flex-col justify-center md:col-span-2">
+              <h2 className="font-bold text-4xl md:text-6xl mb-4">
                 TẠI SAO CHỌN <br/>
                 <span className="text-cyan-500 ml-2">RẤT VÃ MERCH</span>
               </h2>
@@ -81,13 +85,16 @@ export default function Home({features, partners, deliverySteps}) {
                 <RippleButton link="preorder">Xem sản phẩm</RippleButton>
               </div>
             </div>
-            <div className="flex justify-center items-center col-span-1">
-              <Image src={landingPic} alt="landing" title="landing" width={500} height={500}/>
-            </div>
           </div>
         </section>
+        
         <FeedbackForm />
-      </>
+
+        <MessengerCustomerChat
+          pageId="102905002386688"
+          appId="706654517205490"
+        />,
+    </>
       
   )
 }

@@ -13,7 +13,7 @@ export default function PostDetail({blogDetail}) {
                 <title>{blogDetail.tittle}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
-            <div className="px-24 pb-2 overflow-hidden">
+            <div className="px-24 pb-2 overflow-hidden mb-20">
                 <div className="w-full rounded-md">
                     <img 
                         src={blogDetail.thumnail.url}
@@ -23,10 +23,10 @@ export default function PostDetail({blogDetail}) {
                     />
                 </div>
                 <div>
-                    <h2 className="px-2 font-bold text-4xl">{blogDetail.tittle}</h2>
+                    <h2 className="font-bold text-4xl">{blogDetail.tittle}</h2>
                     <span className="text-neutral-500">{blogDetail.dateCreated}</span>
                 </div>
-                <div className="mt-8 px-4 text-neutraul-500">
+                <div className="mt-6 pr-4 text-neutraul-500">
                     <p>{blogDetail.detail}</p>
                 </div>
             </div>

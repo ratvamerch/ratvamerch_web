@@ -22,7 +22,7 @@ export const getPartners = async () => {
 
 const Partners = ({partners}) => {
     return (
-        <section className="flex flex-col justify-center items-center my-10">
+        <section className="w-full flex flex-col justify-center items-center mb-20 md:my-20">
             <h2 className="font-bold text-2xl text-cyan-500 text-center mb-6">CÁC THÀNH VIÊN CỦA CHÚNG MÌNH</h2>
             <div className="grid lg:grid-cols-3 lg:grid-flow-col gap-10">
                 {partners.map(partner => {
@@ -32,6 +32,7 @@ const Partners = ({partners}) => {
                                 <img 
                                     src={partner.partnerAva.url}
                                     alt={partner.partnerName}
+                                    className="w-40 h-40"
                                     title={partner.partnerName}
                                 />
                             </div>

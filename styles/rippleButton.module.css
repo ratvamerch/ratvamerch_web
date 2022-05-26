@@ -1,11 +1,13 @@
 .rippleButton {
-    border: none;
-    background: rgb(6 182 212);
+  border: none;
+  border: 2px solid rgb(6 182 212);
+  background: rgb(6 182 212);
 }
 
 .borderButton {
-    border: 2px solid rgb(6 182 212);
-    background: transparent;
+  box-sizing: border-box;
+  border: 2px solid rgb(6 182 212);
+  background: transparent;
 }
 
 .ripple {

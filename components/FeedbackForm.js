@@ -11,13 +11,13 @@ const MyTextInput = ({ label, ...props }) => {
     <>
         <label 
             htmlFor={props.id || props.name} 
-            className="text-cyan-500 uppercase text-sm mt-4 font-bold"
+            className="w-full ml-6 text-left text-cyan-500 uppercase text-sm mt-4 font-bold"
         >
             {label}
         </label>
         <input className="text-input w-full border-2 border-neutral-200 mt-2 p-3 rounded-lg focus:outline-none focus:shadow-outline" {...field} {...props} />
         {meta.touched && meta.error ? (
-            <div className="error">{meta.error}</div>
+            <div className="error text-red-500">{meta.error}</div>
         ) : null}
     </>
   );
@@ -27,12 +27,12 @@ const MyCheckbox = ({ children, ...props }) => {
   const [field, meta] = useField({ ...props, type: "checkbox" });
   return (
     <>
-      <label className="checkbox">
+      <label className="checkbox mt-4">
         <input {...field} {...props} type="checkbox" />
-        {children}
+        <span className="ml-1">{children}</span>
       </label>
       {meta.touched && meta.error ? (
-        <div className="error">{meta.error}</div>
+        <div className="error text-red-500">{meta.error}</div>
       ) : null}
     </>
   );
@@ -40,14 +40,14 @@ const MyCheckbox = ({ children, ...props }) => {
 
 const FeedbackForm = () => {
   return (
-    <section id="contactForm">
-      <h2 className="font-bold text-2xl text-cyan-500 text-center mt-14 mb-4">ĐỂ LẠI LỜI NHẮN VỚI CHÚNG MÌNH</h2>
+    <section className="w-full my-20" id="contactForm">
+      <h2 className="font-bold text-2xl text-cyan-500 text-center mt-14 my-6">ĐỂ LẠI LỜI NHẮN VỚI CHÚNG MÌNH</h2>
       <Formik
         initialValues={{
           fullName: "",
           email: "",
           message: "",
-          acceptedTerms: false // added for our checkbox
+          acceptedTerms: false 
         }}
         validationSchema={Yup.object({
             fullName: Yup.string()
@@ -100,7 +100,7 @@ const FeedbackForm = () => {
             I accept the terms and conditions
           </MyCheckbox>
 
-          <button className="relative bg-cyan-500 rounded-md mt-4 px-6 py-3 font-bold overflow-hidden cursor-pointer" type="submit">Submit</button>
+          <button className="relative bg-cyan-500 rounded-md mt-6 px-6 py-3 font-bold overflow-hidden cursor-pointer" type="submit">Submit</button>
         </Form>
       </Formik>
     </section>

@@ -23,13 +23,13 @@ const Footer = () => {
     ];
 
     return (
-        <div id="footer" className="border-t-2 border-gray">
-            <div className="grid grid-rows-3 grid-flow-col justify-center items-center">
-                <p className="block text-center font-bold text-cyan-500">RẤT VÃ MERCH</p>
-                <p className="block text-center font-bold">FOLLOW CHÚNG MÌNH</p>
+        <div id="footer" className="w-full border-t-2 border-gray">
+            <div className="grid grid-rows-3 grid-flow-col justify-center items-center mt-4">
+                <span className="text-2xl text-center font-bold text-cyan-500">RẤT VÃ MERCH</span>
+                <span className="text-center font-bold">FOLLOW CHÚNG MÌNH</span>
                 <p className="block text-center text-neutral-500">Để cập nhật những thông tin mới nhất về anime&merch</p>
             </div>
-            <div className="sticky top-6 grid grid-cols-3 gap-4 mt-1">
+            <div className="grid md:grid-cols-3 gap-3 mt-1 mb-4">
                 {contactInfos.map(contactInfo => {
                     return (
                         <div key={contactInfo.id} className="flex justify-center items-center">

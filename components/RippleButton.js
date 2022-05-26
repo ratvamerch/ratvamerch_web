@@ -20,7 +20,7 @@ const RippleButton = ({ children, link, type, onClick }) => {
     return (
         <button
             className= {` 
-                relative w-40 rounded-md m-4 px-6 py-3 font-bold overflow-hidden cursor-pointer
+                relative w-44 rounded-md shadow-md mx-1 my-2 px-6 py-3 font-bold overflow-hidden cursor-pointer
                 ${type == 'bordered' ? styles.borderButton : styles.rippleButton}
             `}
 

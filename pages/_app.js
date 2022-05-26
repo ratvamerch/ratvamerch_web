@@ -7,9 +7,8 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Head>
-        {/* <html lang="en"/>
         <meta charset="utf-8"/>
-        <meta name="viewport" content="width=device-width, initial-scale=1"/> */}
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link rel="shortcut icon" href="./landingPic.png"/>
       </Head>
       <Script src="https://code.iconify.design/2/2.2.1/iconify.min.js" />

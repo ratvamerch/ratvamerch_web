@@ -6,7 +6,7 @@ const Layout = ({children}) => {
   return (
     <>
         <Navbar />
-        <main>
+        <main className="flex flex-col justify-center items-center overflow-hidden">
             {children}
         </main>
         <Footer />

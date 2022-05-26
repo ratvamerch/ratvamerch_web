@@ -6,7 +6,7 @@ const FeatureCard = ({feature}) => {
     return (
         <div 
             key={feature.id} 
-            className="relative flex flex-col items-center px-4 pb-4 min-w-36 max-w-52 max-h-60 overflow-hidden border-2 border-neutral-200"
+            className={`relative flex flex-col ${!isOpen ? "" : "justify-center"} items-center shadow-md px-4 pb-4 w-72 h-72 min-w-36 max-w-52 max-h-60 overflow-hidden border-2 border-neutral-200 rounded-xl`}
         >
             <button onClick = {()=> {setOpen(!isOpen)}} >
                 <span 

@@ -24,8 +24,8 @@ export const getFeatures = async () => {
 
 const Features = ({features}) => {
     return (
-        <section className="flex flex-col justify-center items-center my-10 px-10">
-            <h2 className="font-bold text-2xl text-cyan-500 text-center">CÁC TÍNH NĂNG CỦA RẤT VÃ</h2>
+        <section className="w-full flex flex-col justify-center items-center my-20 box-border">
+            <h2 className="font-bold text-2xl text-cyan-500 text-center mb-6">CÁC TÍNH NĂNG CỦA RẤT VÃ</h2>
             <div className="grid lg:grid-cols-3 lg:grid-flow-col gap-6">
                 {features.map(feature => {
                     return (

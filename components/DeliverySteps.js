@@ -21,22 +21,24 @@ export const getDeliverySteps = async () => {
 
 const DeliverySteps = ({deliverySteps}) => {
   return (
-    <div id="deliverySteps">
+    <section className="w-full flex flex-col justify-center items-center my-20" id="deliverySteps">
       <h2 className="font-bold text-2xl text-cyan-500 text-center mb-8">QUÁ TRÌNH MUA HÀNG</h2>
-      <div className="grid grid-cols-4 grid-flow-col px-6 border-t-2 border-cyan-500">
-        {deliverySteps.map(deliveryStep => {
-          return (
-            <div key={deliveryStep.id} className="flex flex-col items-center -translate-y-4">
-              <span className="border-2 border-cyan-500 text-center align-middle px-2 rounded-full backdrop-blur-md">{deliveryStep.orderNo}</span>
-              <div className="flex flex-col justify-center items-center px-6">
-                <h3 className="font-bold mt-1 mb-2 text-center">{deliveryStep.title}</h3>
-                <p className="text-neutral-500">{deliveryStep.describe}</p>
+      <div className="md:ml-0 w-screen px-10 md:px-2">
+        <div className="w-screen md:grid grid-cols-4 md:grid-col-1 border-l-2 md:border-l-0 md:border-t-2 border-cyan-500">
+          {deliverySteps.map(deliveryStep => {
+            return (
+              <div key={deliveryStep.id} className="flex flex-col mb-8 md:mb-0">
+                <div className="relative flex items-center px-3">
+                  <span className="absolute top-0 md:left-1/2 border-2 border-cyan-500 text-center align-middle px-2 rounded-full backdrop-blur-2xl -translate-x-6 md:-translate-y-4">{deliveryStep.orderNo}</span>
+                  <h3 className="font-bold text-xl w-full text-left ml-6 mt-1 md:text-center">{deliveryStep.title}</h3>
+                </div>
+                <p className="text-neutral-500 pl-10 pr-16">{deliveryStep.describe}</p>
               </div>
-            </div>
-          )
-        })}
+            )
+          })}
+        </div>
       </div>
-    </div>
+    </section>
   )
 }
 
