@@ -23,7 +23,7 @@ const Footer = () => {
     ];
 
     return (
-        <div id="footer" className="w-full border-t-2 border-gray">
+        <div id="footer" className="w-full border-t-2 border-neutral-200">
             <div className="grid grid-rows-3 grid-flow-col justify-center items-center mt-4">
                 <span className="text-2xl text-center font-bold text-cyan-500">RẤT VÃ MERCH</span>
                 <span className="text-center font-bold">FOLLOW CHÚNG MÌNH</span>
@@ -44,7 +44,7 @@ const Footer = () => {
                 <p className="font-bold text-center">Chính sách bảo mật</p>
                 <p className="font-bold text-center">Chính sách thanh toán</p>
             </div>
-            <p className="text-neutral-500 text-center mt-2 mb-6">Copyright 2022 Rất Vã Merch, All Rights Reserved</p>
+            <p className="text-neutral-500 text-center mt-4 mb-6">Copyright 2022 Rất Vã Merch, All Rights Reserved</p>
         </div>  
     )
 }

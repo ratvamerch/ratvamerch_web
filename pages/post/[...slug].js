@@ -1,5 +1,5 @@
-import React from 'react'
-import Head from 'next/head'
+import Image from 'next/image';
+import Head from 'next/head';
 import FeedbackForm from '../../components/FeedbackForm';
 import PreOrder from '../../components/PreOrder';
 import { request, gql} from 'graphql-request';
@@ -13,23 +13,25 @@ export default function PostDetail({blogDetail}) {
                 <title>{blogDetail.tittle}</title>
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
-            <div className="px-24 pb-2 overflow-hidden mb-20">
-                <div className="w-full rounded-md">
-                    <img 
+            <section className="w-full flex flex-col justify-center items-center mt-6 mb-10 box-border">
+                <div className="relative h-80 w-5/6 rounded-md rounded-lg overflow-hidden mb-6 flex justify-center items-center">
+                    <Image 
                         src={blogDetail.thumnail.url}
-                        className="h-96 w-4/5 mx-auto"
+                        className="rounded-lg overflow-hidden"
                         alt={blogDetail.tittle}
                         title={blogDetail.tittle}
+                        layout="fill"
+                        priority
                     />
                 </div>
-                <div>
-                    <h2 className="font-bold text-4xl">{blogDetail.tittle}</h2>
+                <div className="w-full md:px-20">
+                    <h2 className="font-bold text-4xl mb-2">{blogDetail.tittle}</h2>
                     <span className="text-neutral-500">{blogDetail.dateCreated}</span>
                 </div>
-                <div className="mt-6 pr-4 text-neutraul-500">
+                <div className="mt-6 px-2 md:px-20 text-lg text-neutraul-500">
                     <p>{blogDetail.detail}</p>
                 </div>
-            </div>
+            </section>
             <PreOrder />
             <FeedbackForm />
         </>

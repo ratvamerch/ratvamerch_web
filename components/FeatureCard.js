@@ -1,12 +1,16 @@
-import React from 'react'
+import {useState, useRef} from 'react';
+import useIntersection from '../hooks/useIntersection';
 
 const FeatureCard = ({feature}) => {
-    const [isOpen, setOpen] = React.useState(true);
+    const [isOpen, setOpen] = useState(true);
+    const ref = useRef();
+    const inViewport = useIntersection(ref, '50px');
 
     return (
         <div 
-            key={feature.id} 
-            className={`relative flex flex-col ${!isOpen ? "" : "justify-center"} items-center shadow-md px-4 pb-4 w-72 h-72 min-w-36 max-w-52 max-h-60 overflow-hidden border-2 border-neutral-200 rounded-xl`}
+            key={feature.id}
+            ref={ref} 
+            className={`${inViewport ? 'animate__fadeInBottomLeft' : ''} relative flex flex-col ${!isOpen ? "" : "justify-center"} items-center shadow-md px-4 pb-4 w-72 h-72 min-w-36 max-w-52 max-h-60 overflow-hidden border-2 border-cyan-500 rounded-xl`}
         >
             <button onClick = {()=> {setOpen(!isOpen)}} >
                 <span 

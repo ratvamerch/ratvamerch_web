@@ -1,4 +1,6 @@
 import {request, gql} from 'graphql-request';
+import {useRef} from 'react';
+import useIntersection from '../hooks/useIntersection';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
@@ -20,9 +22,12 @@ export const getDeliverySteps = async () => {
 };
 
 const DeliverySteps = ({deliverySteps}) => {
+  const ref = useRef();
+  const inViewport = useIntersection(ref, '50px');
+
   return (
-    <section className="w-full flex flex-col justify-center items-center my-20" id="deliverySteps">
-      <h2 className="font-bold text-2xl text-cyan-500 text-center mb-8">QUÁ TRÌNH MUA HÀNG</h2>
+    <section ref={ref} className={`${inViewport ? 'animate__fadeInUp' : ''} w-full flex flex-col justify-center items-center my-20`} >
+      <h2 className="font-bold text-4xl text-cyan-500 text-center mb-10">QUÁ TRÌNH MUA HÀNG</h2>
       <div className="md:ml-0 w-screen px-10 md:px-2">
         <div className="w-screen md:grid grid-cols-4 md:grid-col-1 border-l-2 md:border-l-0 md:border-t-2 border-cyan-500">
           {deliverySteps.map(deliveryStep => {

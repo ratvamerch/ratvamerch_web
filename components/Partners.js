@@ -1,4 +1,6 @@
 import {request, gql} from 'graphql-request';
+import { useRef } from 'react';
+import useIntersection from '../hooks/useIntersection';
 
 const graphqlAPI = process.env.NEXT_PUBLIC_GRAPHCMS_ENDPOINT;
 
@@ -21,14 +23,20 @@ export const getPartners = async () => {
 };
 
 const Partners = ({partners}) => {
+    const ref = useRef();
+    const inViewport = useIntersection(ref, '50px');
+
     return (
-        <section className="w-full flex flex-col justify-center items-center mb-20 md:my-20">
-            <h2 className="font-bold text-2xl text-cyan-500 text-center mb-6">CÁC THÀNH VIÊN CỦA CHÚNG MÌNH</h2>
+        <section ref={ref} className={`${inViewport ? 'animate__fadeInBottomLeft' : ''} w-full flex flex-col justify-center items-center mb-20 md:my-20`}>
+            <h2 className="font-bold text-4xl text-cyan-500 text-center mb-8">CÁC THÀNH VIÊN CỦA CHÚNG MÌNH</h2>
             <div className="grid lg:grid-cols-3 lg:grid-flow-col gap-10">
                 {partners.map(partner => {
                     return (
-                        <div key={partner.id} className="flex flex-col justify-center items-center">
-                            <div className="box-border border-2 rounded-xl shadow-md overflow-hidden">
+                        <div 
+                            key={partner.id} 
+                            className="flex flex-col justify-center items-center"
+                        >
+                            <div className="box-border border-2 border-neutral-200 rounded-xl shadow-md overflow-hidden">
                                 <img 
                                     src={partner.partnerAva.url}
                                     alt={partner.partnerName}

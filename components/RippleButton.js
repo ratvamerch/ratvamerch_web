@@ -2,7 +2,8 @@ import React from "react";
 import styles from '../styles/rippleButton.module.css';
 import Link from 'next/link';
 
-const RippleButton = ({ children, link, type, onClick }) => {
+const RippleButton = (props) => {
+    const { children, link, type, onClick } = props
     const [coords, setCoords] = React.useState({ x: -1, y: -1 });
     const [isRippling, setIsRippling] = React.useState(false);
 
@@ -45,9 +46,13 @@ const RippleButton = ({ children, link, type, onClick }) => {
                 ""
             )}
             <span className={`relative w-full h-full z-10 ${styles.content}`}>
-                <Link href={`/${link}`} passHref>
-                    <a>{children}</a>
-                </Link>
+                {link === undefined ? 
+                    <span>{children}</span> 
+                    :
+                    <Link href={`/${link}`} passHref>
+                        <a>{children}</a>
+                    </Link>
+                }
             </span>
         </button>
     );
